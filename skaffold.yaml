@@ -1,0 +1,63 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+build:
+  artifacts:
+    - image: niaporter/auth
+      context: auth
+      sync:
+        manual:
+          - src: 'src/***/*.ts'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: niaporter/client
+      context: client
+      sync:
+        manual:
+          - src: '***/*.js'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: niaporter/tickets
+      context: tickets
+      sync:
+        manual:
+          - src: 'src/***/*.ts'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: niaporter/orders
+      context: orders
+      sync:
+        manual:
+          - src: 'src/***/*.ts'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: niaporter/expiration
+      context: expiration
+      sync:
+        manual:
+          - src: 'src/***/*.ts'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+    - image: niaporter/payments
+      context: payments
+      sync:
+        manual:
+          - src: 'src/***/*.ts'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - ./infra/k8s/*
+deploy:
+  kubectl: {}
+
+
+#to run 
+#skaffold dev
