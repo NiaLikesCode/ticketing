@@ -54,7 +54,7 @@ const Checkout = () => {
         const {error} = await stripe.confirmPayment({
             elements,
             confirmParams: {
-              return_url: 'https://ticketing.dev/orders',
+              return_url: 'http://ticketing.niaashleyporter.com/orders',
             },
           });
 

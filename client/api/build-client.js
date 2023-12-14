@@ -16,7 +16,7 @@ export default ({ req }) => {
             // local testing
             //baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
             // prod
-            baseURL: 'ticketing.niaashleyporter.com/',
+            baseURL: 'http://ticketing.niaashleyporter.com/',
             headers: req.headers
         });
     } else {
