@@ -8,7 +8,7 @@ import { ExpirationCompleteListener } from './events/listeners/expiration-comple
 import { PaymentCreatedListener } from './events/listeners/payment-created-listener';
 
 const start = async () => {
-    console.log('Starting.....');
+    console.log('Starting services.....');
     
     if (!process.env.JWT_KEY) {
         throw new Error('Missing environment variable JWT_KEY');
