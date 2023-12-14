@@ -13,7 +13,10 @@ export default ({ req }) => {
         cmd: kubectl get services -n {namespace}
         */
         return axios.create({
-            baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+            // local testing
+            //baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+            // prod
+            baseURL: 'ticketing.niaashleyporter.com/',
             headers: req.headers
         });
     } else {
