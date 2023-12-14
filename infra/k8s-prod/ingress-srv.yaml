@@ -38,7 +38,7 @@ spec:
                 name: orders-srv
                 port:
                   number: 3000
-                  #if you want to run this shit in the browser and chrome says it's unsafe you can type anywhere in the browser and type thisisunsafe, hit enter and that should fix it
+                  #if you want to run this shit in the browser and chrome says it's unsafe you can type anywhere in the browser and type: thisisunsafe, hit enter and that should fix it
           - path: /?(.*)
             pathType: ImplementationSpecific
             backend:
